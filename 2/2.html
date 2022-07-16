@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>环形文字动画特效</title>
+    <link rel="stylesheet" href="2.css"></link>
+</head>
+<body>
+    <div class="circle">
+        helloworlds
+    </div>
+    <!-- svg旋转 -->
+    <svg viewBox="0 0 100 100" width="200px" height="200px">
+        <circle fill="none" stroke="#FF9326" stroke-width="6" stroke-miterlimit="30" stroke-dasharray="10,12.5" cx="50" cy="50" r="39" >
+          <animateTransform 
+             attributeName="transform" 
+             attributeType="XML" 
+             type="rotate"
+             dur="5s" 
+             from="0 50 50"
+             to="360 50 50" 
+             repeatCount="indefinite" />
+      </circle>
+      <circle fill="none" stroke="#FF9326" stroke-width="1" cx="50" cy="50" r="47">
+      </circle>
+    </svg>
+</body>
+<script src="2.js"></script>
+</html>

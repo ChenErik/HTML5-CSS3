@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f7e8;
+    overflow: hidden;
+    user-select: none;
+}
+.circle {
+    width: 50vh;
+    height: 50vh;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    color: #62bfad;
+    font-size: 6vh;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    animation: spin 20s linear infinite;
+}
+.circle span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
