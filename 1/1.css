@@ -32,7 +32,7 @@ body{
     #df4348aa 60.5%,#df4348aa 65%,#f5c4d1aa 65%,transparent 65.5%);
     background-repeat: no-repeat;
     background-size: 75% 86px,75% 86px,416px 208px;
-    background-position: 0% 50%,100% 50%,50% 40%;
+    background-position: 0% 51%, 100% 51%, 50% 40%;
 }
 .container::before{
     background-image:
@@ -44,7 +44,7 @@ body{
     #df4348aa 60.5%,#df4348aa 65%,#f5c4d1aa 65%,transparent 65.5%);
     background-repeat: no-repeat;
     background-size: 85% 86px,85% 86px,400px 200px;
-    background-position: 0% 57%,100% 57%,50% 65%;
+    background-position: 0% 59%, 100% 59%, 50% 65%;
     filter: blur(8px);
     transform: scale(1.05,1.18);
 }
