@@ -1,0 +1,43 @@
+<script setup>
+    import { ref } from 'vue'
+    
+    const msg = ref('Hello World!')
+    document.addEventListener("paste", function () {
+                if (event.clipboardData || event.originalEvent) {
+                    var clipboardData = (event.clipboardData || window.clipboardData);
+                    var val = clipboardData.getData('text/html');
+                      console.log(val)
+                    if(!val){
+                        alert('你没有复制任何内容');
+                    }else{
+                        if(val.indexOf('table')==-1){
+                            alert('你复制的内容不是Excel选中区域，请检查');
+                        }else{
+                           
+                        }
+                    }
+                    event.preventDefault();
+                }
+            });
+    </script>
+    
+    <template>
+      <div class="container_input">
+            1：先从Excel中复制，2：鼠标放在此区域，按Ctrl+V
+      </div>
+    </template>
+    <style>
+      .container_input{
+        width: 70%;
+        height: 300px;
+        background-color: #fff;
+        margin-top: 30px;
+        text-align: center;
+        border-radius: 5px;
+        padding: 50px;
+        border: 1px solid #ccc;
+      }
+      .container_input:hover {
+        border: 1px solid dodgerblue;
+        }
+    </style>
