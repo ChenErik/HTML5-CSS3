@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color-generate</title>
+</head>
+<body>
+    <div id="app">
+        <div style="margin: 10px;display: grid;grid-template-columns: 250px auto;">
+            <input v-model="inputColor" type="color">
+            <div style="display:flex;flex-direction: column;">
+                <div v-for="(item, index) in colorList" :key="item" class="color-item"
+                    :style="{ backgroundColor: item, color: index < 4 ? '#333' : '#fff' }">
+                    {{ item }}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./tinycolor.js"></script>
+<script src="./index.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<script type="module">
+    const { createApp, ref, watchEffect } = Vue
+    createApp({
+        setup() {
+            // component logic
+            const inputColor = ref('')
+            const colorList = ref('')
+            function getColorList() {
+                colorList.value = colorGenerate(inputColor.value)
+            }
+            watchEffect(() => {
+                if (inputColor.value)
+                    getColorList()
+            })
+            return {
+                // exposed to template
+                inputColor,
+                colorList
+            }
+        }
+    }).mount('#app')
+</script>
+</html>
