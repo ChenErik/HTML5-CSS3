@@ -7,7 +7,7 @@ function test(){
 	var itemPosNewAnimTop = activeItemNewAnim.position();
 	var itemPosNewAnimLeft = activeItemNewAnim.position();
 	$(".hori-selector").css({
-		"top":itemPosNewAnimTop.top + "px", 
+		"top":itemPosNewAnimTop.top + "px",
 		"left":itemPosNewAnimLeft.left + "px",
 		"height": activeWidthNewAnimHeight + "px",
 		"width": activeWidthNewAnimWidth + "px"
@@ -20,7 +20,7 @@ function test(){
 		var itemPosNewAnimTop = $(this).position();
 		var itemPosNewAnimLeft = $(this).position();
 		$(".hori-selector").css({
-			"top":itemPosNewAnimTop.top + "px", 
+			"top":itemPosNewAnimTop.top + "px",
 			"left":itemPosNewAnimLeft.left + "px",
 			"height": activeWidthNewAnimHeight + "px",
 			"width": activeWidthNewAnimWidth + "px"
@@ -52,4 +52,4 @@ $('.nav-item').click(function(e){
     const target = $(this).attr('to')
     $('#navView').attr('src',target)
 })
-$('#navView').attr('src','./1/1.html')
+$('#navView').attr('src','./practise/1/1.html')
