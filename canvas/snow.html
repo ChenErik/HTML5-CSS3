@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas下雪</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    #cvs {
+      display: block;
+    }
+
+  </style>
+</head>
+
+<body>
+  <canvas id="cvs" style="background-color: #000;"></canvas>
+</body>
+<script>
+  /* vscode 增加canvas提示 */
+  /** @type {HTMLCanvasElement} */
+  const cvs = document.querySelector('#cvs')
+  /** @type {CanvasRenderingContext2D} */
+  const ctx = cvs.getContext('2d')
+  function draw() {
+    const { clientWidth: width, clientHeight: height } = document.documentElement
+    cvs.width = width
+    cvs.height = height
+    ctx.fillStyle = '#fff'
+    const snows = Array.from(new Array(400)).map(v => {
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        step: Math.random() * 2.5 + 0.5
+      }
+    })
+    const render = () => {
+      ctx.clearRect(0, 0, width, height)
+      ctx.beginPath()
+      snows.forEach(v => {
+        v.y = v.y > height ? 0 : (v.y + v.step)
+        ctx.rect(v.x, v.y, 3, 3)
+      })
+      ctx.fill()
+      requestAnimationFrame(render)
+    }
+    render()
+  }
+  draw()
+  // const obBody = new ResizeObserver(entries => {
+  //   console.log(123)
+  //   draw()
+  // })
+  // obBody.observe(document.body)
+  window.onresize = function () {
+    console.log(123)
+    draw()
+  }
+</script>
+
+</html>
