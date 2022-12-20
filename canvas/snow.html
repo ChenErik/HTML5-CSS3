@@ -58,16 +58,19 @@
     }
     render()
   }
-  draw()
-  // const obBody = new ResizeObserver(entries => {
+  const obBody = new ResizeObserver(entries => {
+    draw()
+  })
+  obBody.observe(document.body)
+
+
+
+
+  // draw()
+  // window.onresize = function () {
   //   console.log(123)
   //   draw()
-  // })
-  // obBody.observe(document.body)
-  window.onresize = function () {
-    console.log(123)
-    draw()
-  }
+  // }
 </script>
 
 </html>
