@@ -25,7 +25,7 @@ audio {
   height: 30px;
   line-height: 30px;
   transition: 0.2s;
-  background: #666 -webkit-linear-gradient(left, #fff, #fff) no-repeat 0 0;
+  background: #666 -webkit-linear-gradient(left, #0ffd0f, #0ffd0f) no-repeat 0 0;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
