@@ -38,7 +38,7 @@ var doms = {
   ul: document.querySelector('.container ul'),
   container: document.querySelector('.container'),
 };
-
+doms.audio.volume = 0.2
 /**
  * 计算出，在当前播放器播放到第几秒的情况下
  * lrcData数组中，应该高亮显示的歌词下标
@@ -96,10 +96,14 @@ function setOffset() {
   var li = doms.ul.querySelector('.active');
   if (li) {
     li.classList.remove('active');
+    li.style.animation = ''
   }
 
   li = doms.ul.children[index];
   if (li) {
+    const animationTime = lrcData[index+1].time - lrcData[index].time
+    li.style.animation = `scan ${animationTime}s cubic-bezier(0, 0.8, 0.5, 0) forwards`
+    // }
     li.classList.add('active');
   }
 }

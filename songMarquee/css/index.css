@@ -5,7 +5,6 @@
 
 body {
   background: #000;
-  color: #666;
   text-align: center;
 }
 
@@ -17,21 +16,31 @@ audio {
 .container {
   height: 420px;
   overflow: hidden;
-  /* border: 2px solid #fff; */
 }
 .container ul {
-  /* border: 2px solid #fff; */
   transition: 0.6s;
   list-style: none;
 }
 .container li {
   height: 30px;
-  /* border: 1px solid #fff; */
   line-height: 30px;
   transition: 0.2s;
+  background: #666 -webkit-linear-gradient(left, #fff, #fff) no-repeat 0 0;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 0 100%;
+
 }
 .container li.active {
-  color: #fff;
-  /* font-size: ; */
   transform: scale(1.2);
+}
+@keyframes scan {
+  0% {
+    background-size: 0% 100%;
+  }
+
+  100% {
+    background-size: 100% 100%;
+  }
 }
